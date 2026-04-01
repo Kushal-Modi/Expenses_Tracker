@@ -1,0 +1,85 @@
+<div class="list-header">
+  <h2>Expense Dashboard</h2>
+  <button class="btn btn-secondary export-btn" (click)="exportCSV()" *ngIf="filteredExpenses.length > 0">
+    Export CSV
+  </button>
+</div>
+
+<div class="filters-container glass-panel">
+  <div class="filter-group">
+    <label for="search">Search</label>
+    <input type="text" id="search" class="filter-input" [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()" placeholder="Search expenses...">
+  </div>
+
+  <div class="filter-group">
+    <label for="category">Category</label>
+    <select id="category" class="filter-input" [(ngModel)]="categoryFilter" (ngModelChange)="applyFilters()">
+      <option value="">All Categories</option>
+      <option value="Food">Food</option>
+      <option value="Travel">Travel</option>
+      <option value="Bills">Bills</option>
+      <option value="Housing">Housing</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="date-range">Date Range</label>
+    <select id="date-range" class="filter-input" [(ngModel)]="dateFilter" (ngModelChange)="applyFilters()">
+      <option value="">All Time</option>
+      <option value="7days">Last 7 Days</option>
+      <option value="30days">Last 30 Days</option>
+      <option value="custom">Custom Range</option>
+    </select>
+  </div>
+
+  <ng-container *ngIf="dateFilter === 'custom'">
+    <div class="filter-group">
+      <label for="start-date">Start Date</label>
+      <input type="date" id="start-date" class="filter-input" [(ngModel)]="customStartDate" (ngModelChange)="applyFilters()">
+    </div>
+    <div class="filter-group">
+      <label for="end-date">End Date</label>
+      <input type="date" id="end-date" class="filter-input" [(ngModel)]="customEndDate" (ngModelChange)="applyFilters()">
+    </div>
+  </ng-container>
+</div>
+
+<div class="glass-panel table-container">
+  <table *ngIf="filteredExpenses.length > 0; else noExpenses" class="expense-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of filteredExpenses">
+        <td>{{ expense.date }}</td>
+        <td class="fw-medium">{{ expense.title }}</td>
+        <td>
+          <span class="category-badge">{{ expense.category }}</span>
+        </td>
+        <td class="amount">₹{{ expense.amount | number:'1.2-2' }}</td>
+        <td class="actions">
+          <a [routerLink]="['/expenses/edit', expense.id]" class="btn-icon edit" title="Edit">✎</a>
+          <button (click)="deleteExpense(expense.id)" class="btn-icon delete" title="Delete">×</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noExpenses>
+    <div class="empty-state">
+      <div class="empty-icon">📊</div>
+      <h3>No expenses found</h3>
+      <p>No expenses found. Start tracking your expenses or try adjusting your filters.</p>
+      <a routerLink="/expenses/add" class="btn btn-primary mt-3">Add Expense</a>
+    </div>
+  </ng-template>
+</div>

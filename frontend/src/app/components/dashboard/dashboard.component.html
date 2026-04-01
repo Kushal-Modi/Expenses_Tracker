@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+  <div class="header-actions">
+    <h2>Financial Overview 📈</h2>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading your data...</p>
+  </div>
+
+  <div *ngIf="!isLoading && expenses.length > 0" class="dashboard-grid">
+    <div class="glass-panel summary-card">
+      <h3>Total Spend</h3>
+      <div class="total-amount">₹{{ totalSpend | number:'1.2-2' }}</div>
+      <p class="subtitle">Across {{ expenses.length }} transactions</p>
+    </div>
+
+    <div class="glass-panel chart-card">
+      <h3>Spends by Category</h3>
+      <div class="chart-wrapper">
+        <canvas baseChart
+          [data]="pieChartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && expenses.length === 0" class="empty-state glass-panel">
+    <h3>No Data Available yet! 💸</h3>
+    <p>Head to the expenses tab to add your first transaction and visualize it here.</p>
+  </div>
+</div>

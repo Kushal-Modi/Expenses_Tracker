@@ -1,0 +1,70 @@
+.app-wrapper {
+  padding-top: 1rem;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.nav-brand h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.nav-links .btn {
+  margin-left: 0.5rem;
+}
+
+.theme-toggle {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .theme-toggle {
+  color: #0f172a;
+}
+body.light-theme .theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+/* Component specific styles removed to styles.css */

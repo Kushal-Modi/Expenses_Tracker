@@ -1,0 +1,79 @@
+<div class="profile-dashboard">
+  <div class="list-header">
+    <h2>My Profile</h2>
+  </div>
+
+  <div class="profile-grid">
+    <!-- Profile Details Card -->
+    <div class="glass-panel profile-card">
+      <h3>Personal Details</h3>
+      <p class="subtitle">Update your personal information below.</p>
+      
+      <div *ngIf="profileMessage" class="alert alert-success">{{ profileMessage }}</div>
+      <div *ngIf="profileError" class="alert alert-danger">{{ profileError }}</div>
+
+      <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name" class="form-control" placeholder="Your Name">
+          <div *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched" class="error-text">
+            Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" formControlName="email" class="form-control" placeholder="your.email@example.com">
+          <div *ngIf="profileForm.get('email')?.hasError('required') && profileForm.get('email')?.touched" class="error-text">
+            Email is required
+          </div>
+          <div *ngIf="profileForm.get('email')?.hasError('email') && profileForm.get('email')?.touched" class="error-text">
+            Valid email format is required
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">Save Changes</button>
+      </form>
+    </div>
+
+    <!-- Change Password Card -->
+    <div class="glass-panel profile-card">
+      <h3>Change Password</h3>
+      <p class="subtitle">Ensure your account is using a long, random password to stay secure.</p>
+      
+      <div *ngIf="passwordMessage" class="alert alert-success">{{ passwordMessage }}</div>
+      <div *ngIf="passwordError" class="alert alert-danger">{{ passwordError }}</div>
+
+      <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+        <div class="form-group">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" formControlName="currentPassword" class="form-control">
+          <div *ngIf="passwordForm.get('currentPassword')?.invalid && passwordForm.get('currentPassword')?.touched" class="error-text">
+            Current password is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" formControlName="newPassword" class="form-control">
+          <div *ngIf="passwordForm.get('newPassword')?.hasError('required') && passwordForm.get('newPassword')?.touched" class="error-text">
+            New password is required
+          </div>
+          <div *ngIf="passwordForm.get('newPassword')?.hasError('minlength') && passwordForm.get('newPassword')?.touched" class="error-text">
+            Must be at least 6 characters
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+          <div *ngIf="passwordForm.hasError('passwordMismatch') && passwordForm.get('confirmPassword')?.touched" class="error-text">
+            Passwords do not match
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="passwordForm.invalid">Update Password</button>
+      </form>
+    </div>
+  </div>
+</div>

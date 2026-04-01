@@ -1,0 +1,1103 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< com.expensetracker:expense-tracker-backend >-------------
+[INFO] Building expense-tracker-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.3:run (default-cli) > test-compile @ expense-tracker-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ expense-tracker-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ expense-tracker-backend ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ expense-tracker-backend ---
+[INFO] skip non existing resourceDirectory C:\Users\kusha\.gemini\antigravity\scratch\expense-tracker\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ expense-tracker-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.3:run (default-cli) < test-compile @ expense-tracker-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.3:run (default-cli) @ expense-tracker-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2026-04-01T21:21:52.883+05:30  INFO 4936 --- [expense-tracker-backend] [           main] c.e.ExpenseTrackerApplication            : Starting ExpenseTrackerApplication using Java 17.0.12 with PID 4936 (C:\Users\kusha\.gemini\antigravity\scratch\expense-tracker\backend\target\classes started by kushalmodi in C:\Users\kusha\.gemini\antigravity\scratch\expense-tracker\backend)
+2026-04-01T21:21:52.887+05:30  INFO 4936 --- [expense-tracker-backend] [           main] c.e.ExpenseTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-04-01T21:21:53.836+05:30  INFO 4936 --- [expense-tracker-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-01T21:21:53.908+05:30  INFO 4936 --- [expense-tracker-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2026-04-01T21:21:54.791+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2026-04-01T21:21:54.804+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-01T21:21:54.804+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-04-01T21:21:54.889+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-01T21:21:54.891+05:30  INFO 4936 --- [expense-tracker-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1939 ms
+2026-04-01T21:21:55.024+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-01T21:21:55.097+05:30  INFO 4936 --- [expense-tracker-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-01T21:21:55.137+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-01T21:21:55.395+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-01T21:21:55.458+05:30  INFO 4936 --- [expense-tracker-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-01T21:21:55.730+05:30  INFO 4936 --- [expense-tracker-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1cba0321
+2026-04-01T21:21:55.733+05:30  INFO 4936 --- [expense-tracker-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-01T21:21:55.780+05:30  WARN 4936 --- [expense-tracker-backend] [           main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-04-01T21:21:55.785+05:30  WARN 4936 --- [expense-tracker-backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-01T21:21:56.949+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-01T21:21:57.096+05:30  INFO 4936 --- [expense-tracker-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-01T21:21:57.758+05:30  WARN 4936 --- [expense-tracker-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-01T21:21:58.176+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@590f806a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2267b0bb, org.springframework.security.web.context.SecurityContextHolderFilter@3e5ed0d4, org.springframework.security.web.header.HeaderWriterFilter@2571bdf4, org.springframework.web.filter.CorsFilter@20505460, org.springframework.security.web.authentication.logout.LogoutFilter@202d1424, com.expensetracker.security.JwtAuthenticationFilter@2ba9ed19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56f19f36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2faae7f6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8eeb4c5, org.springframework.security.web.session.SessionManagementFilter@8aafd70, org.springframework.security.web.access.ExceptionTranslationFilter@3c981f76, org.springframework.security.web.access.intercept.AuthorizationFilter@70d16858]
+2026-04-01T21:21:58.570+05:30  INFO 4936 --- [expense-tracker-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path ''
+2026-04-01T21:21:58.588+05:30  INFO 4936 --- [expense-tracker-backend] [           main] c.e.ExpenseTrackerApplication            : Started ExpenseTrackerApplication in 6.235 seconds (process running for 6.691)
+2026-04-01T21:23:22.289+05:30  INFO 4936 --- [expense-tracker-backend] [nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-01T21:23:22.290+05:30  INFO 4936 --- [expense-tracker-backend] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-01T21:23:22.300+05:30  INFO 4936 --- [expense-tracker-backend] [nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2026-04-01T21:23:22.862+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:23.040+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:23.352+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:23.374+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:23:32.976+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:33.004+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:23:39.708+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:39.762+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        e1_0.id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=? 
+    limit
+        ?
+Hibernate: 
+    select
+        e1_0.id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=? 
+    limit
+        ?
+2026-04-01T21:23:39.806+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=?
+2026-04-01T21:23:39.869+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    delete 
+    from
+        expenses 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        expenses 
+    where
+        id=?
+2026-04-01T21:23:39.902+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:23:39.910+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:18.439+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:18.454+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:21.115+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:21.140+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:24.778+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:24.985+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:25.004+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2026-04-01T21:26:25.064+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:25.077+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:29.936+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:29.961+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-1] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:36.221+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:36.247+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:36.256+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2026-04-01T21:26:36.324+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:36.348+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:39.260+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:39.282+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:41.493+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:41.515+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:45.243+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:45.267+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:53.086+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:53.109+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.id=? 
+        and e1_0.user_id=?
+2026-04-01T21:26:53.117+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+Hibernate: 
+    update
+        expenses 
+    set
+        amount=?,
+        category=?,
+        date=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2026-04-01T21:26:53.187+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:53.210+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:26:56.649+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:26:56.674+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:27:51.328+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:27:51.345+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:37:17.368+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:37:17.461+05:30 DEBUG 4936 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:39:20.978+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T21:39:21.006+05:30 DEBUG 4936 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T21:44:41.280+05:30  INFO 4936 --- [expense-tracker-backend] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-01T21:44:41.386+05:30  INFO 4936 --- [expense-tracker-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-01T21:44:41.572+05:30  INFO 4936 --- [expense-tracker-backend] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22:52 min
+[INFO] Finished at: 2026-04-01T21:44:42+05:30
+[INFO] ------------------------------------------------------------------------
+Terminate batch job (Y/N)? 
