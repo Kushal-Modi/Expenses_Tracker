@@ -25,6 +25,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
@@ -43,11 +44,18 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-body.light-theme .theme-toggle {
+:host-context(.light-theme) .theme-toggle {
   color: #0f172a;
 }
-body.light-theme .theme-toggle:hover {
+:host-context(.light-theme) .theme-toggle:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+
+:host-context(.light-theme) .nav-brand h1 {
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-links {

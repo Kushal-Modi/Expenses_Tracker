@@ -44,7 +44,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
-  color: #fff;
+  color: var(--text-primary);
   font-family: inherit;
   font-size: 0.95rem;
   transition: all 0.3s ease;
@@ -57,8 +57,8 @@
 }
 
 .filter-input option {
-  background-color: #1a1f2e;
-  color: #fff;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .export-btn {
@@ -95,7 +95,7 @@
 
 .fw-medium {
   font-weight: 500;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .amount {
