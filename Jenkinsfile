@@ -23,14 +23,20 @@ pipeline {
 
         stage('Build Frontend') {
             steps {
-                sh 'cd frontend && npm install && npm run build'
+                sh '''
+                cd frontend
+                npm install
+                npm run build
+                '''
             }
         }
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t $IMAGE_BACKEND ./backend'
-                sh 'docker build -t $IMAGE_FRONTEND ./frontend'
+                sh '''
+                docker build -t $IMAGE_BACKEND ./backend
+                docker build -t $IMAGE_FRONTEND ./frontend
+                '''
             }
         }
 
@@ -41,22 +47,47 @@ pipeline {
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+                    sh '''
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    '''
                 }
             }
         }
 
         stage('Push Images') {
             steps {
-                sh 'docker push $IMAGE_BACKEND'
-                sh 'docker push $IMAGE_FRONTEND'
+                sh '''
+                docker push $IMAGE_BACKEND
+                docker push $IMAGE_FRONTEND
+                '''
+            }
+        }
+
+        stage('Configure Kubeconfig') {
+            steps {
+                sh '''
+                aws eks update-kubeconfig \
+                --region us-east-1 \
+                --name expense-cluster
+                '''
             }
         }
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f k8s/'
+                sh '''
+                kubectl apply -f k8s/ --validate=false
+                '''
             }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Pipeline executed successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed!'
         }
     }
 }
