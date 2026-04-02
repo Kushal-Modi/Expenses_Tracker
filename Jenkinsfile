@@ -92,7 +92,6 @@ pipeline {
                 '''
             }
         }
-    }
 
     post {
         success {
