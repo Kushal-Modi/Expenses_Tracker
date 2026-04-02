@@ -63,7 +63,7 @@ pipeline {
             }
         }
 
-        stage('Configure Kubeconfig') {
+      stage('Deploy to Kubernetes') {
     steps {
         withCredentials([usernamePassword(
             credentialsId: 'aws-cred',
@@ -78,6 +78,8 @@ pipeline {
             aws eks update-kubeconfig \
             --region us-east-1 \
             --name expense-cluster
+
+            kubectl apply -f k8s/ --validate=false
             '''
         }
     }
