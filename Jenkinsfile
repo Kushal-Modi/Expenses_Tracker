@@ -63,35 +63,28 @@ pipeline {
             }
         }
 
-      stage('Deploy to Kubernetes') {
-    steps {
-        withCredentials([usernamePassword(
-            credentialsId: 'aws-cred',
-            usernameVariable: 'AWS_ACCESS_KEY_ID',
-            passwordVariable: 'AWS_SECRET_ACCESS_KEY'
-        )]) {
-            sh '''
-            export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-            export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-            export AWS_DEFAULT_REGION=us-east-1
-
-            aws eks update-kubeconfig \
-            --region us-east-1 \
-            --name expense-cluster
-
-            kubectl apply -f k8s/ --validate=false
-            '''
-        }
-    }
-}
-
         stage('Deploy to Kubernetes') {
             steps {
-                sh '''
-                kubectl apply -f k8s/ --validate=false
-                '''
+                withCredentials([usernamePassword(
+                    credentialsId: 'aws-cred',
+                    usernameVariable: 'AWS_ACCESS_KEY_ID',
+                    passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+                )]) {
+                    sh '''
+                    export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+                    export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+                    export AWS_DEFAULT_REGION=us-east-1
+
+                    aws eks update-kubeconfig \
+                    --region us-east-1 \
+                    --name expense-cluster
+
+                    kubectl apply -f k8s/ --validate=false
+                    '''
+                }
             }
         }
+    }
 
     post {
         success {
