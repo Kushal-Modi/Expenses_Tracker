@@ -10,10 +10,10 @@ pipeline {
     stages {
 
         stage('Clone') {
-            steps {
-                git 'https://github.com/Kushal-Modi/Expenses_Tracker.git'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/Kushal-Modi/Expenses_Tracker.git'
+    }
+}
 
         stage('Build Backend') {
             steps {
