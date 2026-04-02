@@ -3,17 +3,17 @@ pipeline {
 
     environment {
         DOCKER_HUB = "kushalmodi220105"
-        IMAGE_BACKEND = "${DOCKER_HUB}/backend:latest"
-        IMAGE_FRONTEND = "${DOCKER_HUB}/frontend:latest"
+        IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:latest"
+        IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:latest"
     }
 
     stages {
 
         stage('Clone') {
-    steps {
-        git branch: 'main', url: 'https://github.com/Kushal-Modi/Expenses_Tracker.git'
-    }
-}
+            steps {
+                git branch: 'main', url: 'https://github.com/Kushal-Modi/Expenses_Tracker.git'
+            }
+        }
 
         stage('Build Backend') {
             steps {
@@ -57,15 +57,6 @@ pipeline {
             steps {
                 sh 'kubectl apply -f k8s/'
             }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Pipeline executed successfully!'
-        }
-        failure {
-            echo '❌ Pipeline failed!'
         }
     }
 }
