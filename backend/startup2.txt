@@ -598,3 +598,676 @@ Hibernate:
         expenses e1_0 
     where
         e1_0.user_id=?
+2026-04-01T22:15:31.885+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:15:31.969+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-4] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:15:33.958+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:15:33.974+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:17:49.176+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:17:49.189+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-8] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:18:17.376+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:18:17.416+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:19:03.454+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:19:03.462+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-3] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:21:30.325+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:21:30.337+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:21:33.709+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:21:33.719+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-7] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:21:37.225+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:21:37.240+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:22:02.239+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:22:02.249+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-1] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:22:04.436+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:22:04.443+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:36:23.495+05:30 DEBUG 6540 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:36:23.686+05:30 DEBUG 6540 --- [expense-tracker-backend] [io-8085-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:36:37.226+05:30  WARN 6540 --- [expense-tracker-backend] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m58s103ms674µs300ns).
+2026-04-01T22:41:11.633+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:41:11.683+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-9] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:41:14.243+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:41:14.287+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-6] org.hibernate.SQL                        : 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.amount,
+        e1_0.category,
+        e1_0.date,
+        e1_0.title,
+        e1_0.user_id 
+    from
+        expenses e1_0 
+    where
+        e1_0.user_id=?
+2026-04-01T22:45:58.053+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2026-04-01T22:45:58.064+05:30 DEBUG 6540 --- [expense-tracker-backend] [nio-8085-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
