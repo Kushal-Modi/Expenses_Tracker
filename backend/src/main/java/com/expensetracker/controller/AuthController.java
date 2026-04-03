@@ -26,7 +26,12 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
+
+        System.out.println("🔥 HIT REGISTER API");
+        System.out.println("USERNAME: " + request.getUsername());
+
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+            System.out.println("❌ USER EXISTS");
             return ResponseEntity.badRequest().build();
         }
 
@@ -37,18 +42,11 @@ public class AuthController {
                 .build();
 
         userRepository.save(user);
-        var jwtToken = jwtUtil.generateToken(user);
-        return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
-    }
 
-    @PostMapping("/login")
-    public ResponseEntity<AuthResponse> authenticate(@RequestBody AuthRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getUsername(),
-                        request.getPassword()));
-        var user = userRepository.findByUsername(request.getUsername()).orElseThrow();
+        System.out.println("✅ USER SAVED");
+
         var jwtToken = jwtUtil.generateToken(user);
+
         return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
     }
 }
