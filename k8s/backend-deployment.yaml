@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: kushalmodi220105/backend:latest
+          image: kushalmodi220105/expense-backend:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8085
