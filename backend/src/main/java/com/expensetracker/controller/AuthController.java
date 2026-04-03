@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", methods = {RequestMethod.POST, RequestMethod.OPTIONS})
 public class AuthController {
 
     private final UserRepository userRepository;
@@ -36,7 +35,7 @@ public class AuthController {
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
-        
+
         userRepository.save(user);
         var jwtToken = jwtUtil.generateToken(user);
         return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
@@ -47,9 +46,7 @@ public class AuthController {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsername(),
-                        request.getPassword()
-                )
-        );
+                        request.getPassword()));
         var user = userRepository.findByUsername(request.getUsername()).orElseThrow();
         var jwtToken = jwtUtil.generateToken(user);
         return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
