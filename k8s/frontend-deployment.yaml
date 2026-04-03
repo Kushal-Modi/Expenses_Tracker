@@ -15,6 +15,6 @@ spec:
       containers:
         - name: frontend
           image: kushalmodi220105/frontend:v3
-imagePullPolicy: Always
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
