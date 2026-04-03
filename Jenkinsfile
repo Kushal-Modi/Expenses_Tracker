@@ -4,7 +4,7 @@ pipeline {
     environment {
     DOCKER_HUB = "kushalmodi220105"
     IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:v1"
-    IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:v2"
+    IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:v3"
  }
 
     stages {
