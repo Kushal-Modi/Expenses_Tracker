@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB = "kushalmodi220105"
-        IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:latest"
-        IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:latest"
-    }
+    DOCKER_HUB = "kushalmodi220105"
+    IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:v1"
+    IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:v2"
+ }
 
     stages {
 
