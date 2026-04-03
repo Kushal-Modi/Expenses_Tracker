@@ -6,13 +6,13 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8085/api/auth';
-  
+  private apiUrl = '/api/auth';
+
   // Track authentication state
   private authStatusSubject = new BehaviorSubject<boolean>(this.hasToken());
   public authStatus$ = this.authStatusSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(

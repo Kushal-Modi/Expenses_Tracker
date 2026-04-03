@@ -8,7 +8,7 @@ import { Expense } from '../models/expense.model';
 })
 export class ExpenseService {
 
-  private apiUrl = 'http://localhost:8085/api/expenses';
+  private apiUrl = '/api/expenses';
 
   constructor(private http: HttpClient) { }
 

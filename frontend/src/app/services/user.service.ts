@@ -16,9 +16,9 @@ export interface PasswordChange {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8085/api/users';
+  private apiUrl = '/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProfile(): Observable<UserProfile> {
     return this.http.get<UserProfile>(`${this.apiUrl}/profile`);
