@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -51,19 +53,30 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getUsername(),
-                        request.getPassword()
-                )
-        );
+    public ResponseEntity<?> login(@RequestBody AuthRequest request) {
+        try {
+            System.out.println("🔐 LOGIN ATTEMPT FOR: " + request.getUsername());
+            
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getUsername(),
+                            request.getPassword()
+                    )
+            );
 
-        var user = userRepository.findByUsername(request.getUsername())
-                .orElseThrow();
+            var user = userRepository.findByUsername(request.getUsername())
+                    .orElseThrow();
 
-        var jwtToken = jwtUtil.generateToken(user);
+            var jwtToken = jwtUtil.generateToken(user);
+            System.out.println("✅ LOGIN SUCCESSFUL");
 
-        return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
+            return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
+        } catch (AuthenticationException e) {
+            System.out.println("❌ LOGIN FAILED: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+        } catch (Exception e) {
+            System.out.println("💥 UNEXPECTED ERROR DURING LOGIN: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred");
+        }
     }
 }
