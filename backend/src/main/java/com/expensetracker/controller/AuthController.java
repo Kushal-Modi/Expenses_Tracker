@@ -49,4 +49,21 @@ public class AuthController {
 
         return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getUsername(),
+                        request.getPassword()
+                )
+        );
+
+        var user = userRepository.findByUsername(request.getUsername())
+                .orElseThrow();
+
+        var jwtToken = jwtUtil.generateToken(user);
+
+        return ResponseEntity.ok(AuthResponse.builder().token(jwtToken).build());
+    }
 }

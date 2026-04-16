@@ -4,6 +4,7 @@
     <p>Please enter your details to sign in.</p>
     
     <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+    <div class="alert alert-success" *ngIf="successMessage">{{ successMessage }}</div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">

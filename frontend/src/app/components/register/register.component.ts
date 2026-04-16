@@ -28,7 +28,7 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe({
-        next: () => this.router.navigate(['/dashboard']),
+        next: () => this.router.navigate(['/login'], { queryParams: { registered: 'true' } }),
         error: (err) => {
           this.error = 'Registration failed. Username may already exist.';
         }

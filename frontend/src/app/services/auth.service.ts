@@ -26,14 +26,7 @@ export class AuthService {
   }
 
   register(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, credentials).pipe(
-      tap((res: any) => {
-        if (res && res.token) {
-          localStorage.setItem('token', res.token);
-          this.authStatusSubject.next(true);
-        }
-      })
-    );
+    return this.http.post(`${this.apiUrl}/register`, credentials);
   }
 
   logout(): void {
