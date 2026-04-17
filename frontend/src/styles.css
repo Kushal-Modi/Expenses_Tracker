@@ -308,3 +308,19 @@ body.light-theme .form-control {
 
 .progress-fill.warning { background: #f1c40f; }
 .progress-fill.danger { background: #e74c3c; }
+
+.empty-budgets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.empty-budgets p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
