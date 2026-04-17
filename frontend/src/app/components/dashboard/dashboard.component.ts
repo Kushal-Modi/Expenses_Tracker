@@ -147,9 +147,17 @@ export class DashboardComponent implements OnInit {
   }
 
   get budgetAlerts(): any[] {
+    const now = new Date();
+    const currentMonth = now.getMonth();
+    const currentYear = now.getFullYear();
+
     return this.budgets.map(b => {
       const spent = this.expenses
-        .filter(e => !e.isIncome && e.category === b.category)
+        .filter(e => {
+          if (e.isIncome || e.category !== b.category) return false;
+          const expDate = new Date(e.date);
+          return expDate.getMonth() === currentMonth && expDate.getFullYear() === currentYear;
+        })
         .reduce((sum, e) => sum + e.amount, 0);
       const percent = Math.min((spent / b.amount) * 100, 100);
       return { ...b, spent, percent };
