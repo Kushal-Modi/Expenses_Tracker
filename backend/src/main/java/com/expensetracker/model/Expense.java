@@ -1,6 +1,7 @@
 package com.expensetracker.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -40,6 +41,7 @@ public class Expense {
     private LocalDate date;
 
     @Column(nullable = false)
+    @JsonProperty("isIncome")
     private boolean isIncome = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
