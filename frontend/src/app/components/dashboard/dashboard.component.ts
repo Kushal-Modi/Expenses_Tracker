@@ -6,7 +6,8 @@ import { ExpenseService } from '../../services/expense.service';
 import { BudgetService, Budget } from '../../services/budget.service';
 import { Expense } from '../../models/expense.model';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -68,8 +69,18 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     forkJoin({
-      expenses: this.expenseService.getAllExpenses(),
-      budgets: this.budgetService.getAllBudgets()
+      expenses: this.expenseService.getAllExpenses().pipe(
+        catchError(err => {
+          console.error('Error fetching expenses', err);
+          return of([]);
+        })
+      ),
+      budgets: this.budgetService.getAllBudgets().pipe(
+        catchError(err => {
+          console.error('Error fetching budgets', err);
+          return of([]);
+        })
+      )
     }).subscribe({
       next: (data) => {
         this.expenses = data.expenses;
