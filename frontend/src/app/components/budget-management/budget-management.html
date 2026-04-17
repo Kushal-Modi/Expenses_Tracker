@@ -8,6 +8,10 @@
   <div class="budget-content">
     <div class="glass-panel add-card">
       <h3>Set Budget</h3>
+      
+      <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+      
       <div class="form-row">
         <div class="form-group">
           <label>Category</label>

@@ -20,6 +20,9 @@ export class BudgetManagement implements OnInit {
     amount: 0
   };
 
+  successMessage = '';
+  errorMessage = '';
+
   constructor(private budgetService: BudgetService) {}
 
   ngOnInit(): void {
@@ -35,12 +38,20 @@ export class BudgetManagement implements OnInit {
 
   saveBudget(): void {
     if (this.newBudget.category && this.newBudget.amount > 0) {
+      this.successMessage = '';
+      this.errorMessage = '';
+      
       this.budgetService.addOrUpdateBudget(this.newBudget).subscribe({
         next: () => {
+          this.successMessage = 'Budget saved successfully! 🎉';
           this.loadBudgets();
           this.newBudget = { category: '', amount: 0 };
+          setTimeout(() => this.successMessage = '', 3000);
         },
-        error: (err) => console.error('Error saving budget', err)
+        error: (err) => {
+          this.errorMessage = 'Failed to save budget. Please check your data.';
+          console.error('Error saving budget', err);
+        }
       });
     }
   }

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: kushalmodi220105/expense-frontend:v9
+          image: kushalmodi220105/expense-frontend:v10
           imagePullPolicy: Always
           ports:
             - containerPort: 80
