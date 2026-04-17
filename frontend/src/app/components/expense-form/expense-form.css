@@ -16,6 +16,48 @@
   margin: 0;
 }
 
+.type-toggle-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.transaction-type-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.toggle-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ccc;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  color: #fff;
+}
+
+.toggle-btn.expense.active {
+  background: #ff4d4d;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.toggle-btn.income.active {
+  background: #2ecc71;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
 .btn-back {
   color: var(--text-secondary);
   text-decoration: none;

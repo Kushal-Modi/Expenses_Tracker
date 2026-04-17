@@ -1,34 +1,80 @@
 <div class="dashboard-container">
-  <div class="header-actions">
-    <h2>Financial Overview 📈</h2>
+  <div class="summary-cards">
+    <div class="summary-card glass-panel income">
+      <div class="card-icon">💰</div>
+      <div class="card-content">
+        <label>Total Income</label>
+        <h3>₹{{ totalIncome | number:'1.2-2' }}</h3>
+      </div>
+    </div>
+    <div class="summary-card glass-panel expense">
+      <div class="card-icon">💸</div>
+      <div class="card-content">
+        <label>Total Expenses</label>
+        <h3>₹{{ totalExpense | number:'1.2-2' }}</h3>
+      </div>
+    </div>
+    <div class="summary-card glass-panel balance">
+      <div class="card-icon">🏦</div>
+      <div class="card-content">
+        <label>Net Balance</label>
+        <h3 [class.negative]="balance < 0">₹{{ balance | number:'1.2-2' }}</h3>
+      </div>
+    </div>
   </div>
 
-  <div *ngIf="isLoading" class="loading-state">
-    <div class="spinner"></div>
-    <p>Loading your data...</p>
-  </div>
-
-  <div *ngIf="!isLoading && expenses.length > 0" class="dashboard-grid">
-    <div class="glass-panel summary-card">
-      <h3>Total Spend</h3>
-      <div class="total-amount">₹{{ totalSpend | number:'1.2-2' }}</div>
-      <p class="subtitle">Across {{ expenses.length }} transactions</p>
+  <div class="charts-row">
+    <div class="chart-container glass-panel line-chart">
+      <div class="chart-header">
+        <h4>Weekly Spending Trend</h4>
+      </div>
+      <div class="chart-wrapper">
+        <canvas baseChart
+          [data]="lineChartData"
+          [options]="lineChartOptions"
+          [type]="'line'">
+        </canvas>
+      </div>
     </div>
 
-    <div class="glass-panel chart-card">
-      <h3>Spends by Category</h3>
+    <div class="chart-container glass-panel pie-chart">
+      <div class="chart-header">
+        <h4>Expense Breakdown</h4>
+      </div>
       <div class="chart-wrapper">
         <canvas baseChart
           [data]="pieChartData"
-          [type]="pieChartType"
-          [options]="pieChartOptions">
+          [options]="pieChartOptions"
+          [type]="pieChartType">
         </canvas>
       </div>
     </div>
   </div>
 
-  <div *ngIf="!isLoading && expenses.length === 0" class="empty-state glass-panel">
-    <h3>No Data Available yet! 💸</h3>
-    <p>Head to the expenses tab to add your first transaction and visualize it here.</p>
+  <div class="budget-section glass-panel">
+    <div class="section-header">
+      <h4>Monthly Budgets</h4>
+      <a routerLink="/budgets" class="btn-manage">Manage Budgets</a>
+    </div>
+    
+    <div class="budget-grid" *ngIf="budgetAlerts.length > 0; else noBudgets">
+      <div class="budget-item" *ngFor="let budget of budgetAlerts">
+        <div class="budget-info">
+          <span class="category">{{ budget.category }}</span>
+          <span class="status">₹{{ budget.spent | number:'1.0-0' }} / ₹{{ budget.amount | number:'1.0-0' }}</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" 
+               [style.width.%]="budget.percent"
+               [class.warning]="budget.percent > 70"
+               [class.danger]="budget.percent >= 100"></div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noBudgets>
+      <div class="empty-budgets">
+        <p>No budgets set. <a routerLink="/budgets">Set your first budget</a> to track spending.</p>
+      </div>
+    </ng-template>
   </div>
 </div>

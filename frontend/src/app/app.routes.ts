@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile';
+import { BudgetManagement } from './components/budget-management/budget-management';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'expenses', component: ExpenseList, canActivate: [authGuard] },
   { path: 'expenses/add', component: ExpenseForm, canActivate: [authGuard] },
   { path: 'expenses/edit/:id', component: ExpenseForm, canActivate: [authGuard] },
+  { path: 'budgets', component: BudgetManagement, canActivate: [authGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: 'dashboard' }
 ];

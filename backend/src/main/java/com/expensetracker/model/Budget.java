@@ -9,38 +9,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "expenses")
+@Table(name = "budgets")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Expense {
+public class Budget {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Title is required")
-    @Column(nullable = false)
-    private String title;
-
-    @NotNull(message = "Amount is required")
-    @Positive(message = "Amount must be positive")
-    @Column(nullable = false)
-    private Double amount;
-
     @NotBlank(message = "Category is required")
     @Column(nullable = false)
     private String category;
 
-    @NotNull(message = "Date is required")
+    @NotNull(message = "Amount is required")
+    @Positive(message = "Budget amount must be positive")
     @Column(nullable = false)
-    private LocalDate date;
-
-    @Column(nullable = false)
-    private boolean isIncome = false;
+    private Double amount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")

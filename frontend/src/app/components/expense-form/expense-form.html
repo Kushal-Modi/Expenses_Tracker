@@ -1,7 +1,20 @@
 <div class="form-wrapper">
   <div class="form-header">
     <a routerLink="/expenses" class="btn-back">← Back</a>
-    <h2>{{ isEditMode ? 'Edit' : 'Add New' }} Expense</h2>
+    <h2>{{ isEditMode ? 'Edit' : 'Add New' }} Transaction</h2>
+  </div>
+
+  <div class="type-toggle-container glass-panel mb-4">
+    <div class="transaction-type-toggle">
+      <button type="button" 
+              [class.active]="!expense.isIncome" 
+              (click)="expense.isIncome = false" 
+              class="toggle-btn expense">Expense</button>
+      <button type="button" 
+              [class.active]="expense.isIncome" 
+              (click)="expense.isIncome = true" 
+              class="toggle-btn income">Income</button>
+    </div>
   </div>
 
   <div class="glass-panel form-card">

@@ -17,7 +17,8 @@ export class ExpenseForm implements OnInit {
     title: '',
     amount: 0,
     category: '',
-    date: new Date().toISOString().split('T')[0]
+    date: new Date().toISOString().split('T')[0],
+    isIncome: false
   };
 
   isEditMode = false;
