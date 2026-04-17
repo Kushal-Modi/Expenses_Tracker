@@ -2,6 +2,7 @@ package com.expensetracker.controller;
 
 import com.expensetracker.model.Budget;
 import com.expensetracker.model.User;
+import com.expensetracker.repository.UserRepository;
 import com.expensetracker.service.BudgetService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,13 @@ public class BudgetController {
     @Autowired
     private BudgetService budgetService;
 
+    @Autowired
+    private UserRepository userRepository;
+
     private User getCurrentUser() {
-        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found: " + username));
     }
 
     @GetMapping

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { Router, RouterModule } from '@angular/router';
 import { ExpenseService } from '../../services/expense.service';
 import { BudgetService, Budget } from '../../services/budget.service';
 import { Expense } from '../../models/expense.model';
@@ -12,7 +13,7 @@ import { catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, BaseChartDirective],
+  imports: [CommonModule, RouterModule, BaseChartDirective],
   providers: [provideCharts(withDefaultRegisterables())],
   templateUrl: './dashboard.component.html',
 })

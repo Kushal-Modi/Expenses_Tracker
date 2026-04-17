@@ -3,8 +3,8 @@ pipeline {
 
     environment {
     DOCKER_HUB = "kushalmodi220105"
-    IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:v7"
-    IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:v10"
+    IMAGE_BACKEND = "${DOCKER_HUB}/expense-backend:v8"
+    IMAGE_FRONTEND = "${DOCKER_HUB}/expense-frontend:v11"
  }
 
     stages {
